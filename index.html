@@ -1,53 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Harold Cabigas - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harold Cabigas Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      background-color: #0f172a;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 3rem;
+      background: #1e293b;
+      border-radius: 20px;
+      margin: 2rem;
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
+      gap: 2rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .hero-text h2 {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-text h3 {
+      font-size: 1.5rem;
+      color: #38bdf8;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icons a {
+      color: #38bdf8;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .btn-cv {
+      padding: 0.6rem 1.2rem;
+      background-color: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn-cv:hover {
+      background-color: #0ea5e9;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+      display: none;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #38bdf8;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .skill {
+      background-color: #1e293b;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+      font-size: 1rem;
+      color: #e2e8f0;
+      transition: transform 0.3s;
+    }
+
+    .skill:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+
+      .hero-text {
+        max-width: 100%;
+      }
+
+      .hero-image img {
+        margin-top: 1.5rem;
+      }
+
+      .skills-list {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>Harold Cabigas</h1>
-    <p>Web Developer | Virtual Assistant | Designer</p>
-    <p>Email: harolcabigas20@gmail.com | GitHub: <a href="https://github.com/Haroldcabigas" target="_blank">Haroldcabigas</a></p>
-  </header>
 
-  <section>
+  <!-- Navigation Bar -->
+  <nav>
+    <h1>Portfolio.</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a onclick="toggleSection('about')">About</a></li>
+      <li><a onclick="toggleSection('skills')">Skills</a></li>
+      <li><a onclick="toggleSection('portfolio')">Portfolio</a></li>
+      <li><a onclick="toggleSection('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Hello, It's Me</h2>
+      <h1>Harold Cabigas</h1>
+      <h3>And I'm a <span style="color:#38bdf8;">Frontend Developer</span></h3>
+      <p>
+        I create modern websites, support online businesses, and help turn digital ideas into reality.
+      </p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <a href="#" class="btn-cv">Download CV</a>
+    </div>
+
+    <div class="hero-image">
+      <label for="profileUpload" style="cursor: pointer;">
+        <img id="profileImage" src="https://via.placeholder.com/300x350.png" alt="Harold Cabigas Photo" />
+      </label>
+      <input type="file" id="profileUpload" accept="image/*" style="display: none;" />
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
     <h2>About Me</h2>
-    <p>I am Harold Cabigas, a web developer, virtual assistant, and designer. I create sleek, modern websites and provide digital support to businesses looking to grow their online presence.</p>
+    <p>
+      I'm Harold Cabigas, a passionate frontend developer focused on building responsive, user-friendly web experiences using modern web technologies like React, Tailwind CSS, and more.
+    </p>
   </section>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>WordPress, Divi Theme</li>
-      <li>Responsive Design, SEO</li>
-      <li>Virtual Assistance, Content Management</li>
-      <li>Graphic Design, Canva</li>
-      <li>Git, GitHub</li>
-    </ul>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-list">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">React</div>
+      <div class="skill">Tailwind CSS</div>
+      <div class="skill">Bootstrap</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">Responsive Design</div>
+      <div class="skill">UI/UX Basics</div>
+    </div>
   </section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>Virtual Coffee</strong> – A sleek and modern website for a premium coffee brand, designed to highlight product quality and enhance customer engagement. <br>
-        <strong>Role:</strong> Web Developer & Designer<br>
-        🔗 <a href="https://virtualcoffee.com.au/" target="_blank">virtualcoffee.com.au</a>
-      </li>
-    </ul>
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>My Portfolio</h2>
+    <p>Here are some of my recent projects.</p>
+    <div>Virtual coffee.com.au</div>
+    <div>Golden dynamics</div>
   </section>
 
-  <section>
-    <h2>Education</h2>
-    <p>Coursework in Web Development and Digital Design – Self-Learning & Online Programs</p>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can reach me at <strong>harolcabigas20@gmail.com</strong> or through social links above.</p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Harold Cabigas</p>
-  </footer>
+  <!-- Toggle Sections Script -->
+  <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      const sections = document.querySelectorAll('section');
+
+      sections.forEach(sec => {
+        if (sec.id !== id && sec.id !== '') {
+          sec.style.display = 'none';
+        }
+      });
+
+      if (section.style.display === 'none' || section.style.display === '') {
+        section.style.display = 'block';
+        section.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        section.style.display = 'none';
+      }
+    }
+  </script>
+
+  <script>
+    const profileUpload = document.getElementById('profileUpload');
+    const profileImage = document.getElementById('profileImage');
+
+    profileUpload.addEventListener('change', function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          profileImage.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+
 </body>
 </html>
+
+
