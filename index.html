@@ -111,21 +111,6 @@
       transform: scale(1.2);
     }
 
-    .btn-cv {
-      padding: 0.6rem 1.2rem;
-      background-color: #38bdf8;
-      color: #0f172a;
-      font-weight: bold;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .btn-cv:hover {
-      background-color: #0ea5e9;
-    }
-
     .hero-image {
       flex: 1;
       display: flex;
@@ -225,14 +210,10 @@
         <a href="#"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-linkedin-in"></i></a>
       </div>
-      <a href="#" class="btn-cv">Download CV</a>
     </div>
 
     <div class="hero-image">
-      <label for="profileUpload" style="cursor: pointer;">
-        <img id="profileImage" src="https://via.placeholder.com/300x350.png" alt="Harold Cabigas Photo" />
-      </label>
-      <input type="file" id="profileUpload" accept="image/*" style="display: none;" />
+      <img src="c:\Users\jEsrA\Pictures\Screenshots\Screenshot 2023-05-12 103901.png" />
     </div>
   </section>
 
@@ -264,8 +245,16 @@
   <section id="portfolio">
     <h2>My Portfolio</h2>
     <p>Here are some of my recent projects.</p>
-    <div>Virtual coffee.com.au</div>
-    <div>Golden dynamics</div>
+    <div>
+      <a href="https://virtualcoffee.com.au/" target="_blank" style="color:#38bdf8; text-decoration:underline;">
+        Virtual Coffee
+      </a>
+    </div>
+    <div>
+      <a href="https://goldengracedynamics.com/" target="_blank" style="color:#38bdf8; text-decoration:underline;">
+        Golden Grace Dynamics
+      </a>
+    </div>
   </section>
 
   <!-- Contact Section -->
@@ -295,25 +284,5 @@
     }
   </script>
 
-  <script>
-    const profileUpload = document.getElementById('profileUpload');
-    const profileImage = document.getElementById('profileImage');
-
-    profileUpload.addEventListener('change', function () {
-      const file = this.files[0];
-      if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-          profileImage.src = e.target.result;
-        };
-
-        reader.readAsDataURL(file);
-      }
-    });
-  </script>
-
 </body>
 </html>
-
-
